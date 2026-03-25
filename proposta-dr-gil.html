@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta Comercial · Dr. Gil Fernandes Jr.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:       #0d1b2e;
+  --navy-mid:   #162540;
+  --navy-light: #1e3254;
+  --blue-accent:#4a7fc1;
+  --blue-glow:  #6b9fd4;
+  --gold:       #c9a96e;
+  --gold-light: #e8c98a;
+  --cream:      #f5f0e8;
+  --white:      #ffffff;
+  --muted:      #8fa3bc;
+  --border:     rgba(74,127,193,0.15);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+
+body {
+  background: var(--navy);
+  color: var(--cream);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+body::before {
+  content:'';
+  position:fixed; inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events:none; z-index:0; opacity:.45;
+}
+
+/* ── COVER ── */
+.cover {
+  min-height:100vh;
+  display:flex; flex-direction:column;
+  justify-content:center; align-items:center;
+  text-align:center; padding:5rem 2rem;
+  position:relative; overflow:hidden;
+  background:var(--navy);
+}
+
+.cover-rings { position:absolute; inset:0; pointer-events:none; }
+.ring {
+  position:absolute; border-radius:50%;
+  border:1px solid rgba(201,169,110,.07);
+  top:50%; left:50%; transform:translate(-50%,-50%);
+}
+.r1{width:580px;height:580px;}
+.r2{width:820px;height:820px;}
+.r3{width:1080px;height:1080px;}
+
+.cover-glow {
+  position:absolute; width:600px; height:600px;
+  background:radial-gradient(circle, rgba(74,127,193,.17) 0%, transparent 70%);
+  top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;
+}
+.cover-bottom-line {
+  position:absolute;bottom:0;left:0;right:0;height:1px;
+  background:linear-gradient(to right,transparent,var(--gold),transparent);opacity:.25;
+}
+
+.cover-eyebrow {
+  font-size:.63rem;letter-spacing:.35em;text-transform:uppercase;
+  color:var(--gold);display:flex;align-items:center;gap:1rem;
+  margin-bottom:2.5rem;position:relative;
+  animation:fadeUp .8s .2s both;
+}
+.cover-eyebrow::before,.cover-eyebrow::after{content:'';width:2.5rem;height:1px;background:var(--gold);opacity:.45;}
+
+.cover-for {
+  font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:.8rem;position:relative;
+  animation:fadeUp .8s .3s both;
+}
+
+.cover-title {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3.5rem,8vw,7.5rem);
+  font-weight:300;line-height:1;letter-spacing:-.01em;
+  position:relative;animation:fadeUp .8s .4s both;
+}
+.cover-title em { font-style:italic; color:var(--blue-glow); }
+
+.cover-subtitle {
+  margin-top:1.8rem;font-size:.93rem;color:var(--muted);
+  max-width:430px;line-height:1.9;position:relative;
+  animation:fadeUp .8s .6s both;
+}
+
+.cover-validity {
+  margin-top:3rem;font-size:.63rem;letter-spacing:.22em;
+  text-transform:uppercase;color:rgba(143,163,188,.3);
+  position:relative;animation:fadeUp .8s .8s both;
+}
+
+.cover-scroll {
+  position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:.6rem;
+  animation:fadeUp .8s 1s both;
+}
+.scroll-line {
+  width:1px;height:3rem;
+  background:linear-gradient(to bottom,rgba(201,169,110,.45),transparent);
+  animation:sPulse 2s infinite;
+}
+.scroll-lbl{font-size:.57rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(143,163,188,.28);}
+@keyframes sPulse{0%,100%{opacity:.4}50%{opacity:1}}
+
+/* ── SHARED ── */
+.section{padding:7rem 5vw;position:relative;z-index:1;}
+.section-inner{max-width:1100px;margin:0 auto;}
+
+.eyebrow{
+  font-size:.63rem;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--gold);display:flex;align-items:center;gap:.8rem;margin-bottom:1.2rem;
+}
+.eyebrow::before{content:'';width:1.8rem;height:1px;background:var(--gold);}
+
+.section-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.2rem,4vw,3.8rem);font-weight:300;
+  line-height:1.08;margin-bottom:1.5rem;
+}
+.section-title em{font-style:italic;color:var(--blue-glow);}
+
+.lead{font-size:.93rem;color:var(--muted);line-height:1.9;max-width:540px;}
+
+.line-sep{height:1px;background:linear-gradient(to right,transparent,var(--border),transparent);margin:0 5vw;}
+
+/* ── PROBLEMA ── */
+.problem-section{background:var(--navy-mid);}
+
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:4rem;}
+
+.problem-cards{
+  display:flex;flex-direction:column;gap:1px;
+  background:var(--border);border:1px solid var(--border);
+}
+.problem-card{
+  background:var(--navy-mid);padding:1.7rem 2rem;
+  display:flex;gap:1.4rem;align-items:flex-start;transition:background .25s;
+}
+.problem-card:hover{background:var(--navy-light);}
+.prob-icon{font-size:1.3rem;flex-shrink:0;margin-top:.1rem;}
+.prob-text strong{display:block;font-size:.87rem;font-weight:500;color:var(--cream);margin-bottom:.3rem;}
+.prob-text p{font-size:.79rem;color:var(--muted);line-height:1.65;}
+
+/* ── SOLUÇÃO ── */
+.solution-section{background:var(--navy);}
+
+.sol-grid{
+  margin-top:4rem;display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1.5px;background:var(--border);border:1px solid var(--border);
+}
+.sol-card{
+  background:var(--navy);padding:2.2rem 1.8rem;
+  position:relative;overflow:hidden;transition:background .25s;
+}
+.sol-card:hover{background:var(--navy-mid);}
+.sol-card::after{
+  content:'';position:absolute;bottom:0;left:0;
+  width:0;height:2px;background:var(--gold);transition:width .4s;
+}
+.sol-card:hover::after{width:100%;}
+.sol-num{
+  font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;
+  color:rgba(201,169,110,.11);line-height:1;margin-bottom:.8rem;
+}
+.sol-icon{font-size:1.3rem;display:block;margin-bottom:.8rem;}
+.sol-title{font-family:'Cormorant Garamond',serif;font-size:1.28rem;font-weight:400;color:var(--white);margin-bottom:.6rem;}
+.sol-desc{font-size:.79rem;color:var(--muted);line-height:1.7;}
+
+/* ── ENTREGÁVEIS ── */
+.deliverables-section{background:var(--navy-mid);}
+
+.del-list{
+  margin-top:4rem;display:grid;grid-template-columns:1fr 1fr;
+  gap:1px;background:var(--border);border:1px solid var(--border);
+}
+.del-item{
+  background:var(--navy-mid);padding:1.8rem 2rem;
+  display:flex;gap:1.4rem;align-items:flex-start;transition:background .25s;
+}
+.del-item:hover{background:var(--navy-light);}
+.del-check{
+  width:1.5rem;height:1.5rem;border:1px solid var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;margin-top:.2rem;color:var(--gold);font-size:.7rem;
+}
+.del-content strong{display:block;font-size:.87rem;font-weight:500;color:var(--cream);margin-bottom:.3rem;}
+.del-content p{font-size:.78rem;color:var(--muted);line-height:1.65;}
+
+/* ── PREVIEW ── */
+.preview-section{background:var(--navy-light);}
+
+.mockup{margin-top:4rem;border:1px solid var(--border);overflow:hidden;}
+.mockup-bar{
+  background:rgba(255,255,255,.04);padding:.75rem 1.2rem;
+  display:flex;align-items:center;gap:1.2rem;border-bottom:1px solid var(--border);
+}
+.mockup-dots{display:flex;gap:.45rem;}
+.dot{width:.45rem;height:.45rem;border-radius:50%;}
+.dot:nth-child(1){background:#ff5f57;}
+.dot:nth-child(2){background:#febc2e;}
+.dot:nth-child(3){background:#28c840;}
+.mockup-url{
+  flex:1;background:rgba(255,255,255,.05);
+  padding:.28rem .9rem;font-size:.7rem;color:var(--muted);letter-spacing:.05em;
+}
+.mockup-body{padding:2rem;display:flex;flex-direction:column;gap:1px;background:var(--border);}
+
+.mock-row{
+  background:var(--navy-light);padding:1.3rem 1.8rem;
+  display:flex;justify-content:space-between;align-items:center;transition:background .2s;
+}
+.mock-row:hover{background:#243a5e;}
+.mock-row-l{display:flex;flex-direction:column;gap:.35rem;}
+.mock-tag{font-size:.57rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);}
+.mock-name{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:400;color:var(--white);}
+.mock-desc{font-size:.71rem;color:var(--muted);}
+.mock-arr{color:var(--border);font-size:1.1rem;}
+
+.mock-row.hl{background:rgba(201,169,110,.06);border-left:2px solid var(--gold);}
+.mock-row.hl .mock-tag{color:var(--gold-light);}
+.mock-row.hl .mock-arr{color:var(--gold);}
+
+/* ── INVESTIMENTO ── */
+.investment-section{background:var(--navy);}
+
+.inv-grid{margin-top:4rem;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start;}
+
+.price-card{
+  background:var(--navy-mid);border:1px solid var(--border);
+  padding:3rem 2.8rem;position:relative;overflow:hidden;
+}
+.price-card::before{
+  content:'';position:absolute;top:-5rem;right:-5rem;
+  width:15rem;height:15rem;
+  background:radial-gradient(circle,rgba(201,169,110,.1) 0%,transparent 70%);
+}
+.price-eyebrow{font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;}
+.price-lbl{font-size:.7rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.4rem;}
+.price-val{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3.5rem,6vw,5.5rem);font-weight:300;line-height:1;letter-spacing:-.02em;
+}
+.price-val sup{font-size:1.6rem;vertical-align:super;color:var(--gold-light);font-weight:300;}
+.price-val span{color:var(--gold-light);}
+.price-note{font-size:.73rem;color:var(--muted);margin-top:.6rem;line-height:1.5;}
+.price-div{height:1px;background:var(--border);margin:2rem 0;}
+.price-inc{display:flex;flex-direction:column;gap:.85rem;}
+.pi{display:flex;align-items:center;gap:.9rem;font-size:.82rem;color:var(--muted);}
+.pi-chk{color:var(--gold);font-size:.77rem;flex-shrink:0;}
+.price-cta{
+  display:block;width:100%;margin-top:2.5rem;
+  background:var(--gold);color:var(--navy);text-align:center;padding:1rem;
+  font-family:'Outfit',sans-serif;font-size:.77rem;font-weight:500;
+  letter-spacing:.15em;text-transform:uppercase;text-decoration:none;transition:all .3s;
+}
+.price-cta:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,169,110,.3);}
+
+.terms-card{
+  background:var(--navy-mid);border:1px solid var(--border);
+  padding:2.5rem 2.2rem;display:flex;flex-direction:column;gap:1.4rem;
+}
+.term-head{font-size:.82rem;font-weight:500;color:var(--cream);display:flex;align-items:center;gap:.6rem;margin-bottom:.4rem;}
+.term-ico{font-size:1rem;}
+.term-body{font-size:.78rem;color:var(--muted);line-height:1.7;}
+.term-sep{height:1px;background:var(--border);}
+
+/* ── PROCESSO ── */
+.process-section{background:var(--navy-mid);}
+
+.steps{
+  margin-top:4rem;display:grid;grid-template-columns:repeat(4,1fr);
+  gap:2rem;position:relative;
+}
+.steps::before{
+  content:'';position:absolute;
+  top:1.42rem;left:calc(12.5% + 1rem);right:calc(12.5% + 1rem);
+  height:1px;background:var(--border);
+}
+.step{text-align:center;}
+.step-circle{
+  width:2.85rem;height:2.85rem;background:var(--navy-mid);
+  border:1px solid var(--border);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 1.2rem;
+  font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--gold);
+  position:relative;z-index:1;
+}
+.step-title{font-size:.87rem;font-weight:500;color:var(--cream);margin-bottom:.5rem;}
+.step-desc{font-size:.77rem;color:var(--muted);line-height:1.65;}
+
+/* ── FAQ ── */
+.faq-section{background:var(--navy);}
+
+.faq-grid{margin-top:4rem;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start;}
+
+.faq-list{display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border);}
+.faq-item{background:var(--navy);overflow:hidden;}
+.faq-q{
+  width:100%;background:transparent;border:none;
+  padding:1.4rem 1.7rem;text-align:left;
+  font-family:'Outfit',sans-serif;font-size:.84rem;font-weight:300;color:var(--cream);
+  cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;
+  transition:background .2s;
+}
+.faq-q:hover{background:var(--navy-mid);}
+.faq-arr{font-size:1rem;color:var(--gold);transition:transform .3s;flex-shrink:0;}
+.faq-item.open .faq-arr{transform:rotate(45deg);}
+.faq-a{
+  max-height:0;overflow:hidden;
+  transition:max-height .4s ease,padding .3s;
+  font-size:.79rem;color:var(--muted);line-height:1.8;
+  padding:0 1.7rem;
+}
+.faq-item.open .faq-a{max-height:200px;padding:0 1.7rem 1.5rem;}
+
+.faq-aside{background:var(--navy-light);border:1px solid var(--border);padding:2.8rem;}
+.faq-aside-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.8rem;font-weight:300;line-height:1.2;margin-bottom:1rem;
+}
+.faq-aside-title em{font-style:italic;color:var(--blue-glow);}
+.faq-aside-body{font-size:.82rem;color:var(--muted);line-height:1.85;margin-bottom:2rem;}
+.faq-aside-cta{
+  display:block;width:100%;background:transparent;
+  border:1px solid var(--gold);color:var(--gold);text-align:center;
+  padding:.9rem;font-size:.74rem;font-weight:400;letter-spacing:.15em;
+  text-transform:uppercase;text-decoration:none;transition:all .3s;
+}
+.faq-aside-cta:hover{background:var(--gold);color:var(--navy);}
+
+/* ── FOOTER CTA ── */
+.footer-cta{
+  background:var(--navy-mid);padding:8rem 5vw;text-align:center;
+  position:relative;overflow:hidden;z-index:1;
+}
+.footer-cta::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 50% at 50% 100%,rgba(74,127,193,.1) 0%,transparent 70%);
+  pointer-events:none;
+}
+.footer-cta::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(to right,transparent,var(--border),transparent);
+}
+
+.ftcta-eyebrow{
+  font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);
+  display:flex;align-items:center;justify-content:center;gap:.8rem;
+  margin-bottom:1.5rem;position:relative;
+}
+.ftcta-eyebrow::before,.ftcta-eyebrow::after{content:'';width:1.5rem;height:1px;background:var(--gold);}
+
+.ftcta-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.5rem,6vw,5.5rem);font-weight:300;line-height:1.05;
+  max-width:700px;margin:0 auto 1.5rem;letter-spacing:-.01em;position:relative;
+}
+.ftcta-title em{font-style:italic;color:var(--blue-glow);}
+
+.ftcta-sub{
+  font-size:.9rem;color:var(--muted);max-width:420px;
+  margin:0 auto 3.5rem;line-height:1.9;position:relative;
+}
+
+.footer-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;}
+
+.btn-gold{
+  display:inline-flex;align-items:center;gap:.6rem;
+  background:var(--gold);color:var(--navy);padding:.9rem 2.2rem;
+  font-family:'Outfit',sans-serif;font-size:.77rem;font-weight:500;
+  letter-spacing:.15em;text-transform:uppercase;text-decoration:none;transition:all .3s;
+}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,169,110,.3);}
+
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:.6rem;
+  background:transparent;color:var(--muted);padding:.9rem 2.2rem;
+  font-family:'Outfit',sans-serif;font-size:.77rem;font-weight:300;
+  letter-spacing:.12em;text-transform:uppercase;text-decoration:none;
+  border:1px solid rgba(143,163,188,.2);transition:all .3s;
+}
+.btn-ghost:hover{border-color:var(--muted);color:var(--cream);}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--navy);padding:2.5rem 5vw;
+  border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:.7rem;color:var(--muted);flex-wrap:wrap;gap:1rem;
+  position:relative;z-index:1;
+}
+.footer-brand{
+  font-family:'Cormorant Garamond',serif;font-size:1rem;
+  font-weight:400;color:var(--gold);letter-spacing:.1em;
+}
+
+/* ── FLOATING WA ── */
+.floating-wa{
+  position:fixed;bottom:1.8rem;right:1.8rem;z-index:100;
+  width:3.2rem;height:3.2rem;background:#25d366;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.3rem;text-decoration:none;
+  box-shadow:0 4px 20px rgba(37,211,102,.4);
+  animation:waPulse 2.5s infinite;transition:transform .3s;
+}
+.floating-wa:hover{transform:scale(1.1);}
+@keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.35);}50%{box-shadow:0 4px 30px rgba(37,211,102,.6);}}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .section{padding:5rem 5vw;}
+  .problem-grid{grid-template-columns:1fr;gap:3rem;}
+  .sol-grid{grid-template-columns:1fr;}
+  .del-list{grid-template-columns:1fr;}
+  .inv-grid{grid-template-columns:1fr;}
+  .steps{grid-template-columns:1fr 1fr;}
+  .steps::before{display:none;}
+  .faq-grid{grid-template-columns:1fr;}
+}
+@media(max-width:580px){
+  .steps{grid-template-columns:1fr;}
+  .cover-title{font-size:3rem;}
+}
+</style>
+</head>
+<body>
+
+<a href="https://api.whatsapp.com/send/?phone=5588981406251&text&type=phone_number&app_absent=0" target="_blank" class="floating-wa" title="WhatsApp">💬</a>
+
+<!-- ════════ COVER ════════ -->
+<section class="cover">
+  <div class="cover-rings">
+    <div class="ring r1"></div>
+    <div class="ring r2"></div>
+    <div class="ring r3"></div>
+  </div>
+  <div class="cover-glow"></div>
+  <div class="cover-bottom-line"></div>
+
+  <div class="cover-eyebrow">Proposta Comercial Exclusiva</div>
+  <div class="cover-for">Para: Dr. Gil Fernandes Jr.</div>
+  <h1 class="cover-title">Landing<br><em>Page</em><br>Profissional</h1>
+  <p class="cover-subtitle">Uma presença digital à altura do seu trabalho — elegante, persuasiva e construída para converter visitantes em pacientes e dentistas em mentorandos.</p>
+  <div class="cover-validity">Proposta válida por 7 dias · Março 2026</div>
+  <div class="cover-scroll">
+    <div class="scroll-line"></div>
+    <div class="scroll-lbl">Rolar</div>
+  </div>
+</section>
+
+<!-- ════════ PROBLEMA ════════ -->
+<section class="section problem-section">
+  <div class="section-inner">
+    <div class="problem-grid">
+      <div>
+        <div class="eyebrow">O cenário atual</div>
+        <h2 class="section-title">O que está<br>te <em>custando</em><br>hoje.</h2>
+        <p class="lead">Seu talento é inegável. Seus resultados falam por si. Mas sem uma página profissional, você depende exclusivamente das redes sociais — e isso tem um custo invisível, porém alto.</p>
+      </div>
+      <div class="problem-cards reveal">
+        <div class="problem-card">
+          <div class="prob-icon">😶</div>
+          <div class="prob-text"><strong>Sem credibilidade centralizada</strong><p>Pacientes novos chegam ao seu perfil e não encontram um lugar para entender quem você é, o que faz e por que confiar.</p></div>
+        </div>
+        <div class="problem-card">
+          <div class="prob-icon">🔗</div>
+          <div class="prob-text"><strong>Link na bio não convence</strong><p>Um botão de Beacons não transmite sofisticação. Não conta sua história. Não mostra seus resultados. Não vende sua mentoria.</p></div>
+        </div>
+        <div class="problem-card">
+          <div class="prob-icon">💸</div>
+          <div class="prob-text"><strong>Mentoria sem vitrine</strong><p>Dentistas interessados chegam sem contexto. Uma página bem feita pré-qualifica e aquece o lead antes do primeiro contato.</p></div>
+        </div>
+        <div class="problem-card">
+          <div class="prob-icon">📉</div>
+          <div class="prob-text"><strong>Dependência do algoritmo</strong><p>Post que não performa, alcance que cai. Uma landing page funciona 24h independente do algoritmo.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="line-sep"></div>
+
+<!-- ════════ SOLUÇÃO ════════ -->
+<section class="section solution-section">
+  <div class="section-inner">
+    <div class="eyebrow">A solução</div>
+    <h2 class="section-title">Uma página que<br><em>trabalha</em> por você.</h2>
+    <p class="lead">Uma landing page estratégica que posiciona, convence e converte — tanto para pacientes quanto para dentistas que buscam mentoria.</p>
+    <div class="sol-grid reveal">
+      <div class="sol-card"><div class="sol-num">01</div><span class="sol-icon">✨</span><div class="sol-title">Design Premium</div><p class="sol-desc">Visual sofisticado, tipografia refinada e identidade coerente com sua marca pessoal como especialista de alto nível.</p></div>
+      <div class="sol-card"><div class="sol-num">02</div><span class="sol-icon">🎯</span><div class="sol-title">Texto Persuasivo</div><p class="sol-desc">Copy estratégico que comunica seu diferencial, gera identificação e conduz o visitante à ação certa.</p></div>
+      <div class="sol-card"><div class="sol-num">03</div><span class="sol-icon">📱</span><div class="sol-title">100% Responsiva</div><p class="sol-desc">Experiência perfeita em qualquer dispositivo. A maioria dos seus visitantes vem do Instagram, pelo celular.</p></div>
+      <div class="sol-card"><div class="sol-num">04</div><span class="sol-icon">⚡</span><div class="sol-title">Carregamento Rápido</div><p class="sol-desc">Código limpo e otimizado. Cada segundo a mais de carregamento é uma oportunidade perdida.</p></div>
+      <div class="sol-card"><div class="sol-num">05</div><span class="sol-icon">🔁</span><div class="sol-title">Prova Social Integrada</div><p class="sol-desc">Depoimentos, antes/depois e seus números do Instagram — transformando seguidores em prova de autoridade.</p></div>
+      <div class="sol-card"><div class="sol-num">06</div><span class="sol-icon">💬</span><div class="sol-title">CTAs para WhatsApp</div><p class="sol-desc">Botões estratégicos com mensagens pré-definidas para consulta e mentoria, aumentando a conversão.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="line-sep"></div>
+
+<!-- ════════ ENTREGÁVEIS ════════ -->
+<section class="section deliverables-section">
+  <div class="section-inner">
+    <div class="eyebrow">O que está incluso</div>
+    <h2 class="section-title">Tudo o que<br>você <em>recebe.</em></h2>
+    <p class="lead">Sem surpresas. Sem cobranças extras. Entrega completa e pronta para publicar.</p>
+    <div class="del-list reveal">
+      <div class="del-item"><div class="del-check">✓</div><div class="del-content"><strong>Landing Page completa em HTML/CSS</strong><p>Arquivo único e otimizado, pronto para hospedar em qualquer plataforma.</p></div></div>
+      <div class="del-item"><div class="del-check">✓</div><div class="del-content"><strong>Seção Hero com foto e bio</strong><p>Apresentação impactante com suas especialidades e botão de agendamento direto no WhatsApp.</p></div></div>
+      <div class="del-item"><div class="del-check">✓</div><div class="del-content"><strong>Seção de Serviços / Tratamentos</strong><p>Todos os seus tratamentos apresentados de forma clara, elegante e informativa.</p></div></div>
+      <div class="del-item"><div class="del-check">✓</div><div class="del-content"><strong>Galeria Antes & Depois</strong><p>Espaço para suas melhores transformações com layout visual de alto impacto.</p></div></div>
+      <div class="del-item"><div class="del-check">✓</div><div class="del-content"><strong>Seção de Depoimentos</strong><p>Prova social estruturada com avaliações de pacientes, gerando confiança imediata.</p></div></div>
+      <div class="del-item"><div class="del-check">✓</div><div class="del-content"><strong>Seção exclusiva da Mentoria</strong><p>Página dentro da página para captar dentistas com CTA direto para WhatsApp exclusivo.</p></div></div>
+      <div class="del-item"><div class="del-check">✓</div><div class="del-content"><strong>Design 100% responsivo (mobile-first)</strong><p>Experiência impecável em celular, tablet e desktop.</p></div></div>
+      <div class="del-item"><div class="del-check">✓</div><div class="del-content"><strong>1 rodada de ajustes após entrega</strong><p>Solicite alterações de texto, cor ou conteúdo — eu aplico sem custo adicional.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="line-sep"></div>
+
+<!-- ════════ PREVIEW ════════ -->
+<section class="section preview-section">
+  <div class="section-inner">
+    <div class="eyebrow">Estrutura da página</div>
+    <h2 class="section-title">Como vai<br><em>ficar.</em></h2>
+    <p class="lead">Cada seção tem um objetivo estratégico — da primeira impressão até a conversão final.</p>
+    <div class="mockup reveal">
+      <div class="mockup-bar">
+        <div class="mockup-dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+        <div class="mockup-url">drgilfernandes.com.br</div>
+      </div>
+      <div class="mockup-body">
+        <div class="mock-row"><div class="mock-row-l"><span class="mock-tag">Seção 1 · Hero</span><div class="mock-name">Foto + Nome + Especialidade</div><div class="mock-desc">Primeira impressão poderosa com botão de agendamento.</div></div><div class="mock-arr">→</div></div>
+        <div class="mock-row"><div class="mock-row-l"><span class="mock-tag">Seção 2 · Sobre</span><div class="mock-name">Quem é o Dr. Gil</div><div class="mock-desc">Sua história, filosofia e credenciais. Constrói autoridade.</div></div><div class="mock-arr">→</div></div>
+        <div class="mock-row"><div class="mock-row-l"><span class="mock-tag">Seção 3 · Serviços</span><div class="mock-name">Tratamentos oferecidos</div><div class="mock-desc">Facetas, lentes, resinas, endodontia, clareamento e design do sorriso.</div></div><div class="mock-arr">→</div></div>
+        <div class="mock-row"><div class="mock-row-l"><span class="mock-tag">Seção 4 · Resultados</span><div class="mock-name">Galeria Antes & Depois</div><div class="mock-desc">Seus melhores casos — prova visual do seu trabalho.</div></div><div class="mock-arr">→</div></div>
+        <div class="mock-row"><div class="mock-row-l"><span class="mock-tag">Seção 5 · Depoimentos</span><div class="mock-name">O que dizem seus pacientes</div><div class="mock-desc">Avaliações reais. Quebra objeções e gera confiança.</div></div><div class="mock-arr">→</div></div>
+        <div class="mock-row hl"><div class="mock-row-l"><span class="mock-tag">Seção 6 · Mentoria ★</span><div class="mock-name">Mentoria exclusiva para dentistas</div><div class="mock-desc">Seção estratégica para captar mentorandos com CTA de WhatsApp exclusivo.</div></div><div class="mock-arr">→</div></div>
+        <div class="mock-row"><div class="mock-row-l"><span class="mock-tag">Seção 7 · CTA Final</span><div class="mock-name">Agendar consulta</div><div class="mock-desc">Chamada final com botão de WhatsApp para agendamento.</div></div><div class="mock-arr">→</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="line-sep"></div>
+
+<!-- ════════ INVESTIMENTO ════════ -->
+<section class="section investment-section">
+  <div class="section-inner">
+    <div class="eyebrow">Investimento</div>
+    <h2 class="section-title">Transparente<br>e <em>justo.</em></h2>
+    <div class="inv-grid">
+      <div class="price-card reveal">
+        <div class="price-eyebrow">Landing Page Profissional Completa</div>
+        <div class="price-lbl">Valor único</div>
+        <div class="price-val"><sup>R$</sup>1<span>.200</span></div>
+        <p class="price-note">Pagamento único · Sem mensalidade · Sem taxa de manutenção</p>
+        <div class="price-div"></div>
+        <div class="price-inc">
+          <div class="pi"><span class="pi-chk">✓</span> Landing page completa com 7 seções</div>
+          <div class="pi"><span class="pi-chk">✓</span> Design premium personalizado</div>
+          <div class="pi"><span class="pi-chk">✓</span> Integração WhatsApp (consulta + mentoria)</div>
+          <div class="pi"><span class="pi-chk">✓</span> Responsivo para celular e desktop</div>
+          <div class="pi"><span class="pi-chk">✓</span> 1 rodada de revisão inclusa</div>
+          <div class="pi"><span class="pi-chk">✓</span> Entrega em até 5 dias úteis</div>
+        </div>
+        <a href="https://api.whatsapp.com/send/?phone=5588981406251&text=Olá!%20Quero%20fechar%20a%20Landing%20Page!&type=phone_number&app_absent=0" target="_blank" class="price-cta">Quero fechar agora →</a>
+      </div>
+      <div class="terms-card reveal">
+        <div class="term"><div class="term-head"><span class="term-ico">💳</span> Formas de pagamento</div><p class="term-body">PIX, transferência bancária ou parcelamento em 2× no cartão de crédito (valor total: R$ 1.200,00).</p></div>
+        <div class="term-sep"></div>
+        <div class="term"><div class="term-head"><span class="term-ico">🗓️</span> Prazo de entrega</div><p class="term-body">Até 5 dias úteis após confirmação do pagamento e envio dos materiais (foto, textos, número do WhatsApp).</p></div>
+        <div class="term-sep"></div>
+        <div class="term"><div class="term-head"><span class="term-ico">🔄</span> Revisões</div><p class="term-body">1 rodada de ajustes inclusa. Revisões adicionais por R$ 150,00 cada.</p></div>
+        <div class="term-sep"></div>
+        <div class="term"><div class="term-head"><span class="term-ico">📦</span> Entrega</div><p class="term-body">Você recebe o arquivo HTML pronto para publicar. Hospedagem não está inclusa, mas indico as melhores opções.</p></div>
+        <div class="term-sep"></div>
+        <div class="term"><div class="term-head"><span class="term-ico">⏳</span> Validade</div><p class="term-body">Esta proposta é válida por 7 dias. Após esse prazo, o valor pode sofrer reajuste.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="line-sep"></div>
+
+<!-- ════════ PROCESSO ════════ -->
+<section class="section process-section">
+  <div class="section-inner">
+    <div class="eyebrow">Como funciona</div>
+    <h2 class="section-title">Do fechamento<br>à <em>entrega.</em></h2>
+    <div class="steps reveal">
+      <div class="step"><div class="step-circle">01</div><div class="step-title">Aprovação</div><p class="step-desc">Você aprova a proposta e realiza o pagamento. Confirmado, já começamos.</p></div>
+      <div class="step"><div class="step-circle">02</div><div class="step-title">Briefing</div><p class="step-desc">Você envia: foto, textos, número do WhatsApp e qualquer preferência visual.</p></div>
+      <div class="step"><div class="step-circle">03</div><div class="step-title">Desenvolvimento</div><p class="step-desc">Criação da landing page com design premium em até 5 dias úteis.</p></div>
+      <div class="step"><div class="step-circle">04</div><div class="step-title">Entrega & Ajustes</div><p class="step-desc">Você recebe o arquivo, solicita ajustes e a página está pronta para publicar.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="line-sep"></div>
+
+<!-- ════════ FAQ ════════ -->
+<section class="section faq-section">
+  <div class="section-inner">
+    <div class="eyebrow">Dúvidas comuns</div>
+    <h2 class="section-title">Perguntas<br><em>frequentes.</em></h2>
+    <div class="faq-grid">
+      <div class="faq-list reveal">
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Preciso ter hospedagem para usar a landing page?<span class="faq-arr">+</span></button><div class="faq-a">Não necessariamente. O arquivo HTML pode ser publicado gratuitamente em plataformas como Netlify ou GitHub Pages. Se preferir um domínio próprio, a hospedagem tem custo em torno de R$ 20 a R$ 50/mês.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Posso usar no link da bio do Instagram?<span class="faq-arr">+</span></button><div class="faq-a">Sim! Esse é exatamente o uso principal. Você substitui o Beacons pelo link da sua landing page e passa a ter uma presença muito mais profissional e persuasiva.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Eu precisarei escrever os textos?<span class="faq-arr">+</span></button><div class="faq-a">Os textos já foram elaborados com base no seu perfil. Você revisará e aprovará cada trecho, podendo solicitar ajustes. Não precisa escrever do zero.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Em quanto tempo fico com a página no ar?<span class="faq-arr">+</span></button><div class="faq-a">Após entrega do arquivo (5 dias úteis), a publicação é quase imediata. No Netlify, por exemplo, você arrasta o arquivo e já está no ar em minutos.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">O design será exclusivo para mim?<span class="faq-arr">+</span></button><div class="faq-a">Sim. A página foi criada especificamente para o Dr. Gil Fernandes Jr., com identidade visual, conteúdo e estrutura personalizados. Nenhuma outra página será igual.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Posso adicionar mais conteúdo depois?<span class="faq-arr">+</span></button><div class="faq-a">Sim! Como o arquivo é em HTML, qualquer desenvolvedor pode editá-lo no futuro. Também ofereço manutenção e atualização mediante orçamento separado.</div></div>
+      </div>
+      <div class="faq-aside reveal">
+        <div class="faq-aside-title">Ainda tem<br><em>dúvidas?</em></div>
+        <p class="faq-aside-body">Me chama no WhatsApp. Respondo rapidamente e posso explicar qualquer detalhe antes de você tomar sua decisão.</p>
+        <a href="https://api.whatsapp.com/send/?phone=5588981406251&text=Olá!%20Tenho%20uma%20dúvida%20sobre%20a%20proposta.&type=phone_number&app_absent=0" target="_blank" class="faq-aside-cta">💬 Tirar dúvida no WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FOOTER CTA ════════ -->
+<section class="footer-cta">
+  <div class="ftcta-eyebrow">Pronto para começar</div>
+  <h2 class="ftcta-title">Pronto para ter uma<br>página que <em>realmente</em><br>converte?</h2>
+  <p class="ftcta-sub">Invista R$ 1.200,00 uma única vez e tenha uma presença digital que trabalha por você 24 horas por dia.</p>
+  <div class="footer-btns">
+    <a href="https://api.whatsapp.com/send/?phone=5588981406251&text=Olá!%20Quero%20fechar%20a%20Landing%20Page%20por%20R%241.200!&type=phone_number&app_absent=0" target="_blank" class="btn-gold">💬 Fechar agora pelo WhatsApp</a>
+    <a href="https://api.whatsapp.com/send/?phone=5588981406251&text&type=phone_number&app_absent=0" target="_blank" class="btn-ghost">Tenho uma dúvida antes</a>
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+  <div class="footer-brand">Dr. Gil Fernandes Jr.</div>
+  <div>Proposta válida por 7 dias · Março 2026</div>
+  <div>Landing Page · R$ 1.200,00</div>
+</footer>
+
+<script>
+function toggleFaq(btn){
+  const item=btn.parentElement;
+  const open=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+  if(!open)item.classList.add('open');
+}
+const reveals=document.querySelectorAll('.reveal');
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('visible'),i*80);
+      obs.unobserve(e.target);
+    }
+  });
+},{threshold:0.1});
+reveals.forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
